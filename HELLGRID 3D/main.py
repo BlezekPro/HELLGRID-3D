@@ -82,6 +82,13 @@ class Player(FirstPersonController):
     def input(self, key):
             super().input(key)
             
+                # Ratunkowy teleport na środek mapy (klawisz R)
+            if key == 'r':
+                self.position = Vec3(0, 2, 0)
+                self.rotation = Vec3(0, 0, 0)
+                Audio('assets/sound/teleport', volume=0.4) 
+                print("System: Gracz zresetowany na środek mapy.")
+
             # Dźwięk skoku
             if key == 'space':
                 Audio('assets/sound/jump', volume=0.5)
